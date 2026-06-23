@@ -41,6 +41,24 @@ function toggleBereich(id) {
 }
 
 /**
+ * Toggle the reform cards (Why the reform was necessary)
+ */
+function toggleReformCard(card) {
+  const content = card.querySelector('.reform-card-content');
+  const icon = card.querySelector('.toggle-icon');
+  
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    icon.textContent = '▲';
+    card.style.boxShadow = '0 12px 30px rgba(0,0,0,0.1)';
+  } else {
+    content.style.display = 'none';
+    icon.textContent = '▼';
+    card.style.boxShadow = '';
+  }
+}
+
+/**
  * Smooth scroll for anchor links
  */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
